@@ -1,0 +1,109 @@
+[
+  {
+    "screenId": "d0d7517c327a4bec964a83dee72cbdbd",
+    "title": "Gameplay - PrismRelay Canary",
+    "componentName": "GameplayPrismrelayCanary",
+    "file": "src/screens/GameplayPrismrelayCanary.tsx",
+    "buttons": 1,
+    "inputs": 0,
+    "links": 7,
+    "actions": [
+      {
+        "id": "scoreboard-1",
+        "kind": "button",
+        "label": "Scoreboard",
+        "index": 0
+      },
+      {
+        "id": "start-1",
+        "kind": "link",
+        "label": "START",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "pause-2",
+        "kind": "link",
+        "label": "PAUSE",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "restart-3",
+        "kind": "link",
+        "label": "RESTART",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "level-4",
+        "kind": "link",
+        "label": "LEVEL",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "score-5",
+        "kind": "link",
+        "label": "SCORE",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "lives-6",
+        "kind": "link",
+        "label": "LIVES",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "timer-7",
+        "kind": "link",
+        "label": "TIMER",
+        "href": "#",
+        "index": 6
+      }
+    ]
+  },
+  {
+    "screenId": "69621ce02aa54843b7225caeeeb0e139",
+    "title": "Game Settings - PrismRelay Canary",
+    "componentName": "GameSettingsPrismrelayCanary",
+    "file": "src/screens/GameSettingsPrismrelayCanary.tsx",
+    "buttons": 5,
+    "inputs": 3,
+    "links": 0,
+    "actions": [
+      {
+        "id": "novice-1",
+        "kind": "button",
+        "label": "NOVICE",
+        "index": 0
+      },
+      {
+        "id": "operator-2",
+        "kind": "button",
+        "label": "OPERATOR",
+        "index": 1
+      },
+      {
+        "id": "master-3",
+        "kind": "button",
+        "label": "MASTER",
+        "index": 2
+      },
+      {
+        "id": "save-preferences-4",
+        "kind": "button",
+        "label": "SAVE PREFERENCES",
+        "index": 3
+      },
+      {
+        "id": "return-to-gameplay-5",
+        "kind": "button",
+        "label": "RETURN TO GAMEPLAY",
+        "index": 4
+      }
+    ]
+  }
+]
