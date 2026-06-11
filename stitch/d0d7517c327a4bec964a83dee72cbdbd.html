@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gameplay - PrismRelay Canary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700;800&amp;family=JetBrains+Mono:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#849495",
+                        "secondary-fixed": "#ffd7f0",
+                        "background": "#131314",
+                        "inverse-on-surface": "#313031",
+                        "on-primary-fixed-variant": "#004f54",
+                        "inverse-primary": "#00696f",
+                        "primary-fixed-dim": "#00dbe7",
+                        "on-secondary-fixed": "#3a0033",
+                        "tertiary-fixed": "#ffdea8",
+                        "primary-container": "#00f2ff",
+                        "on-surface": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "on-secondary": "#5e0053",
+                        "secondary": "#fface8",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#ffd58c",
+                        "on-primary-fixed": "#002022",
+                        "outline-variant": "#3a494b",
+                        "surface-tint": "#00dbe7",
+                        "on-tertiary": "#412d00",
+                        "on-background": "#e5e2e3",
+                        "on-tertiary-fixed-variant": "#5e4200",
+                        "secondary-container": "#ff24e4",
+                        "surface-container": "#201f20",
+                        "on-secondary-container": "#520049",
+                        "surface": "#131314",
+                        "surface-dim": "#131314",
+                        "surface-container-highest": "#353436",
+                        "on-primary": "#00363a",
+                        "on-surface-variant": "#b9cacb",
+                        "tertiary": "#fff6ed",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#271900",
+                        "surface-bright": "#3a393a",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#fface8",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-container-low": "#1c1b1c",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary-container": "#006a71",
+                        "primary-fixed": "#74f5ff",
+                        "on-secondary-fixed-variant": "#840076",
+                        "on-tertiary-container": "#7e5900",
+                        "primary": "#e1fdff",
+                        "surface-variant": "#353436",
+                        "tertiary-fixed-dim": "#ffba20"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "panel-padding": "24px",
+                        "unit": "4px",
+                        "margin-desktop": "32px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "mono-label": ["JetBrains Mono"],
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "mono-value": ["JetBrains Mono"],
+                        "display-lg-mobile": ["Geist"],
+                        "caption": ["Geist"]
+                    },
+                    "fontSize": {
+                        "mono-label": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "mono-value": ["18px", { "lineHeight": "1", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glow-sm { box-shadow: 0 0 10px var(--tw-shadow-color); }
+        .glow-md { box-shadow: 0 0 20px var(--tw-shadow-color); }
+        .text-glow { text-shadow: 0 0 8px currentColor; }
+        
+        .scanline {
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1));
+            background-size: 100% 4px;
+        }
+        
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(132, 148, 149, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(132, 148, 149, 0.05) 1px, transparent 1px);
+        }
+
+        .neon-border {
+            border: 1px solid #00dbe7;
+            box-shadow: 0 0 8px #00dbe7, inset 0 0 4px rgba(0, 219, 231, 0.2);
+        }
+
+        .hex-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 64px);
+            grid-auto-rows: 55px;
+            gap: 4px;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hex-node {
+            width: 64px;
+            height: 74px;
+            background-color: #1c1b1c;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 1px solid rgba(132, 148, 149, 0.2);
+            transition: all 0.2s;
+        }
+        
+        /* Offset every other row for hex grid effect */
+        .hex-grid > div:nth-child(16n+9),
+        .hex-grid > div:nth-child(16n+10),
+        .hex-grid > div:nth-child(16n+11),
+        .hex-grid > div:nth-child(16n+12),
+        .hex-grid > div:nth-child(16n+13),
+        .hex-grid > div:nth-child(16n+14),
+        .hex-grid > div:nth-child(16n+15),
+        .hex-grid > div:nth-child(16n+16) {
+            transform: translateX(34px);
+        }
+
+        .hex-active {
+            background-color: rgba(0, 242, 255, 0.1);
+            border-color: #00f2ff;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3) inset;
+        }
+
+        .pulse {
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 5px rgba(0, 219, 231, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(0, 219, 231, 0.8); }
+            100% { box-shadow: 0 0 5px rgba(0, 219, 231, 0.2); }
+        }
+
+        .beam {
+            position: absolute;
+            background: #00f2ff;
+            box-shadow: 0 0 10px #00f2ff, 0 0 20px #00f2ff;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen overflow-hidden flex font-body-md scanline relative">
+<!-- Background Grid -->
+<div class="absolute inset-0 grid-bg pointer-events-none z-0"></div>
+<!-- SideNavBar (Web - Left) -->
+<nav class="hidden md:flex flex-col items-center py-panel-padding bg-surface-container-low/60 backdrop-blur-xl docked left-0 h-screen rounded-r-xl border-r border-primary/20 shadow-[0_0_15px_rgba(0,219,231,0.2)] fixed left-0 top-0 w-20 z-40">
+<!-- Header / Identity -->
+<div class="mb-12 flex flex-col items-center">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center border border-outline-variant/30 mb-2 neon-border">
+<span class="material-symbols-outlined text-primary-container">dns</span>
+</div>
+<div class="text-[10px] font-mono-label text-primary-fixed-dim text-center leading-tight">
+                OPERATOR_01<br/>
+<span class="text-outline/70">SIGNAL_STABLE</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 flex flex-col gap-6 w-full px-2">
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-primary-container border-l-2 border-primary-container p-unit group hover:bg-primary/10 hover:text-primary-fixed-dim translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span class="text-[10px] font-mono-label">START</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline p-unit group hover:bg-primary/10 hover:text-primary-fixed-dim transition-all" href="#">
+<span class="material-symbols-outlined mb-1">pause</span>
+<span class="text-[10px] font-mono-label">PAUSE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline p-unit group hover:bg-primary/10 hover:text-primary-fixed-dim transition-all" href="#">
+<span class="material-symbols-outlined mb-1">refresh</span>
+<span class="text-[10px] font-mono-label">RESTART</span>
+</a>
+</div>
+<!-- Bottom Status -->
+<div class="mt-auto">
+<div class="w-8 h-8 rounded-full border border-outline-variant flex items-center justify-center opacity-50">
+<span class="material-symbols-outlined text-xs">power_settings_new</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-20 flex flex-col relative z-10 h-screen">
+<!-- TopAppBar (Web & Mobile Header) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-12 bg-background/80 backdrop-blur-md border-b border-outline-variant/30 md:pl-24">
+<div class="flex items-center gap-4">
+<div class="font-mono-label text-mono-label font-black tracking-tighter text-primary-container text-glow">
+                    PRISM_RELAY_CANARY
+                </div>
+</div>
+<!-- HUD Stats -->
+<div class="hidden md:flex items-center gap-6 font-mono-value text-mono-value text-primary-fixed-dim">
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded border-l-2 border-primary-container">
+<span class="text-xs text-outline font-mono-label">LEVEL</span>
+<span>04</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded border-l-2 border-tertiary-fixed">
+<span class="text-xs text-outline font-mono-label">SCORE</span>
+<span>12,450</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded border-l-2 border-secondary-fixed">
+<span class="text-xs text-outline font-mono-label">LIVES</span>
+<div class="flex gap-1 text-secondary-fixed">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded border border-outline-variant text-primary-fixed-dim font-mono-value">
+<span class="material-symbols-outlined text-sm">timer</span>
+<span>02:45</span>
+</div>
+<button class="w-8 h-8 flex items-center justify-center text-outline hover:text-primary-fixed hover:glow-sm transition-colors hidden md:flex">
+<span class="material-symbols-outlined">scoreboard</span>
+</button>
+</div>
+</header>
+<!-- Playfield Canvas -->
+<div class="flex-1 mt-12 flex flex-col items-center justify-center relative overflow-hidden p-margin-desktop">
+<!-- Pause Overlay Hint -->
+<div class="absolute top-8 right-8 font-mono-label text-mono-label text-outline/50 flex items-center gap-2 z-20 bg-surface/50 px-3 py-1 rounded backdrop-blur-sm border border-outline-variant/30">
+<span class="px-2 py-0.5 bg-surface-container rounded text-on-surface">P</span>
+<span>TO PAUSE</span>
+</div>
+<!-- Central Relay Grid -->
+<div class="relative w-full max-w-4xl mx-auto flex-1 flex items-center justify-center">
+<!-- Glowing Paths / Beams (Simulated) -->
+<div class="absolute inset-0 pointer-events-none opacity-60">
+<div class="beam h-1 w-32 top-[40%] left-[25%] rotate-[30deg]"></div>
+<div class="beam h-1 w-24 top-[55%] left-[45%] rotate-[-30deg]"></div>
+<div class="beam h-1 w-40 top-[40%] left-[55%] rotate-[0deg]"></div>
+</div>
+<div class="hex-grid scale-75 md:scale-100 transition-transform">
+<!-- Row 1 -->
+<div class="hex-node opacity-30"></div>
+<div class="hex-node"></div>
+<div class="hex-node opacity-30"></div>
+<div class="hex-node"></div>
+<div class="hex-node opacity-30"></div>
+<div class="hex-node"></div>
+<div class="hex-node opacity-30"></div>
+<div class="hex-node"></div>
+<!-- Row 2 -->
+<div class="hex-node"></div>
+<div class="hex-node hex-active pulse">
+<span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings: 'FILL' 1;">trip_origin</span>
+</div>
+<div class="hex-node border-outline-variant">
+<div class="w-1 h-full bg-outline-variant rotate-45"></div>
+</div>
+<div class="hex-node"></div>
+<div class="hex-node"></div>
+<div class="hex-node hex-active">
+<span class="material-symbols-outlined text-secondary-fixed text-2xl">interests</span>
+</div>
+<div class="hex-node"></div>
+<div class="hex-node opacity-30"></div>
+<!-- Row 3 -->
+<div class="hex-node opacity-30"></div>
+<div class="hex-node"></div>
+<div class="hex-node hex-active border-primary-container">
+<div class="w-full h-1 bg-primary-container pulse shadow-[0_0_10px_#00f2ff]"></div>
+</div>
+<div class="hex-node"></div>
+<div class="hex-node hex-active border-primary-container">
+<div class="w-1 h-full bg-primary-container rotate-[-45deg] pulse shadow-[0_0_10px_#00f2ff]"></div>
+</div>
+<div class="hex-node"></div>
+<div class="hex-node"></div>
+<div class="hex-node opacity-30"></div>
+<!-- Row 4 -->
+<div class="hex-node opacity-30"></div>
+<div class="hex-node"></div>
+<div class="hex-node"></div>
+<div class="hex-node hex-active border-tertiary-fixed pulse">
+<span class="material-symbols-outlined text-tertiary-fixed text-3xl">token</span>
+</div>
+<div class="hex-node border-outline-variant">
+<div class="w-full h-1 bg-outline-variant"></div>
+</div>
+<div class="hex-node"></div>
+<div class="hex-node"></div>
+<div class="hex-node opacity-30"></div>
+<!-- Row 5 -->
+<div class="hex-node opacity-30"></div>
+<div class="hex-node opacity-30"></div>
+<div class="hex-node"></div>
+<div class="hex-node"></div>
+<div class="hex-node"></div>
+<div class="hex-node"></div>
+<div class="hex-node opacity-30"></div>
+<div class="hex-node opacity-30"></div>
+</div>
+</div>
+<!-- Active Controls Help (Bottom Right Corner) -->
+<div class="absolute bottom-8 right-8 bg-surface-container-high/80 backdrop-blur-md border border-outline-variant/30 rounded-lg p-4 w-64 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+<div class="font-mono-label text-caption text-primary-fixed-dim mb-3 border-b border-outline-variant/30 pb-2 uppercase tracking-widest">
+                    Active Controls
+                </div>
+<div class="flex flex-col gap-2 font-mono-label text-caption">
+<div class="flex justify-between items-center">
+<span class="text-outline">SELECT</span>
+<div class="flex gap-1">
+<span class="px-1.5 py-0.5 bg-surface rounded border border-outline-variant text-on-surface">↑</span>
+<span class="px-1.5 py-0.5 bg-surface rounded border border-outline-variant text-on-surface">↓</span>
+<span class="px-1.5 py-0.5 bg-surface rounded border border-outline-variant text-on-surface">←</span>
+<span class="px-1.5 py-0.5 bg-surface rounded border border-outline-variant text-on-surface">→</span>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-outline">FLIP MIRROR</span>
+<span class="px-3 py-0.5 bg-surface rounded border border-outline-variant text-on-surface">SPACE</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-outline">CYCLE NODE</span>
+<span class="px-2 py-0.5 bg-surface rounded border border-outline-variant text-on-surface">TAB</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container-highest/40 backdrop-blur-lg border-t border-primary/20 shadow-[0_-4px_20px_rgba(0,219,231,0.15)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-primary-container glow-sm scale-110 transition-all shadow-primary-container" href="#">
+<span class="material-symbols-outlined mb-1">layers</span>
+<span class="text-[10px] font-mono-label">LEVEL</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-secondary" href="#">
+<span class="material-symbols-outlined mb-1">analytics</span>
+<span class="text-[10px] font-mono-label">SCORE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-secondary" href="#">
+<span class="material-symbols-outlined mb-1">favorite</span>
+<span class="text-[10px] font-mono-label">LIVES</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-secondary" href="#">
+<span class="material-symbols-outlined mb-1">schedule</span>
+<span class="text-[10px] font-mono-label">TIMER</span>
+</a>
+</nav>
+<script>
+        // Simple ambient pulse effect for the beams
+        setInterval(() => {
+            const beams = document.querySelectorAll('.beam');
+            beams.forEach(beam => {
+                const currentOpacity = parseFloat(beam.style.opacity || 1);
+                beam.style.opacity = currentOpacity > 0.5 ? '0.4' : '1';
+                beam.style.transition = 'opacity 1.5s ease-in-out';
+            });
+        }, 1500);
+    </script>
+</body></html>

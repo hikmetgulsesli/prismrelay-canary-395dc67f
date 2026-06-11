@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Game Settings - PrismRelay Canary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline": "#849495",
+                        "secondary-fixed": "#ffd7f0",
+                        "background": "#131314",
+                        "inverse-on-surface": "#313031",
+                        "on-primary-fixed-variant": "#004f54",
+                        "inverse-primary": "#00696f",
+                        "primary-fixed-dim": "#00dbe7",
+                        "on-secondary-fixed": "#3a0033",
+                        "tertiary-fixed": "#ffdea8",
+                        "primary-container": "#00f2ff",
+                        "on-surface": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "on-secondary": "#5e0053",
+                        "secondary": "#fface8",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#ffd58c",
+                        "on-primary-fixed": "#002022",
+                        "outline-variant": "#3a494b",
+                        "surface-tint": "#00dbe7",
+                        "on-tertiary": "#412d00",
+                        "on-background": "#e5e2e3",
+                        "on-tertiary-fixed-variant": "#5e4200",
+                        "secondary-container": "#ff24e4",
+                        "surface-container": "#201f20",
+                        "on-secondary-container": "#520049",
+                        "surface": "#131314",
+                        "surface-dim": "#131314",
+                        "surface-container-highest": "#353436",
+                        "on-primary": "#00363a",
+                        "on-surface-variant": "#b9cacb",
+                        "tertiary": "#fff6ed",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#271900",
+                        "surface-bright": "#3a393a",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#fface8",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-container-low": "#1c1b1c",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary-container": "#006a71",
+                        "primary-fixed": "#74f5ff",
+                        "on-secondary-fixed-variant": "#840076",
+                        "on-tertiary-container": "#7e5900",
+                        "primary": "#e1fdff",
+                        "surface-variant": "#353436",
+                        "tertiary-fixed-dim": "#ffba20"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "16px",
+                        "panel-padding": "24px",
+                        "unit": "4px",
+                        "margin-desktop": "32px",
+                        "gutter": "16px"
+                    },
+                    fontFamily: {
+                        "mono-label": ["JetBrains Mono"],
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "mono-value": ["JetBrains Mono"],
+                        "display-lg-mobile": ["Geist"],
+                        "caption": ["Geist"]
+                    },
+                    fontSize: {
+                        "mono-label": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "display-lg": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "mono-value": ["18px", { lineHeight: "1", fontWeight: "700" }],
+                        "display-lg-mobile": ["32px", { lineHeight: "1.1", fontWeight: "800" }],
+                        "caption": ["12px", { lineHeight: "1.4", fontWeight: "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neon-border {
+            border: 1px solid var(--primary-fixed-dim, #00dbe7);
+            box-shadow: 0 0 8px rgba(0, 219, 231, 0.4), inset 0 0 4px rgba(0, 219, 231, 0.2);
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 15px rgba(0, 219, 231, 0.6), inset 0 0 8px rgba(0, 219, 231, 0.4);
+            background: linear-gradient(180deg, rgba(0, 219, 231, 0.1) 0%, transparent 100%);
+        }
+        .scanline-bg {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1));
+            background-size: 100% 4px;
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 8px;
+            background: #00dbe7;
+            cursor: pointer;
+            border-radius: 0;
+            box-shadow: 0 0 5px #00dbe7;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 2px;
+            cursor: pointer;
+            background: #3a494b;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex items-center justify-center relative overflow-hidden font-body-md text-body-md">
+<!-- Blurred Gameplay Background Simulation -->
+<div class="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center" data-alt="A futuristic cyberpunk cityscape at night, heavily blurred to serve as a background. Neon cyan and magenta lights streak across a dark, technological landscape, creating a sense of high-speed motion and advanced computing environments. The overall aesthetic is dark, vibrant, and highly digital, resembling a complex game engine rendered scene.">
+<div class="absolute inset-0 backdrop-blur-md bg-background/80"></div>
+</div>
+<!-- Main Settings Panel -->
+<main class="relative z-10 w-full max-w-2xl px-gutter">
+<div class="bg-surface-container-low/60 backdrop-blur-xl border border-primary/20 rounded-xl shadow-[0_0_15px_rgba(0,219,231,0.2)] p-margin-desktop scanline-bg flex flex-col gap-8">
+<!-- Header -->
+<header class="flex justify-between items-center border-b border-outline-variant/30 pb-4">
+<div>
+<h1 class="font-headline-md text-headline-md text-primary-fixed-dim uppercase tracking-wider">SYSTEM_CONFIG</h1>
+<p class="font-mono-label text-mono-label text-outline mt-1">PRISM_RELAY_CANARY v2.4</p>
+</div>
+<span class="material-symbols-outlined text-primary-fixed-dim" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+</header>
+<!-- Settings Content -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Left Column -->
+<div class="flex flex-col gap-6">
+<!-- Difficulty -->
+<div class="flex flex-col gap-2">
+<label class="font-mono-label text-mono-label text-on-surface-variant uppercase">Threat Level</label>
+<div class="flex rounded-DEFAULT border border-outline-variant overflow-hidden">
+<button class="flex-1 py-2 font-mono-label text-mono-label text-outline hover:bg-primary/10 hover:text-primary-fixed-dim transition-colors">NOVICE</button>
+<button class="flex-1 py-2 font-mono-label text-mono-label bg-primary-container/20 text-primary-container border-x border-outline-variant glow-sm transition-colors">OPERATOR</button>
+<button class="flex-1 py-2 font-mono-label text-mono-label text-outline hover:bg-primary/10 hover:text-primary-fixed-dim transition-colors">MASTER</button>
+</div>
+</div>
+<!-- Game Speed -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<label class="font-mono-label text-mono-label text-on-surface-variant uppercase">Sim Speed</label>
+<span class="font-mono-value text-mono-value text-primary-fixed-dim">1.0x</span>
+</div>
+<div class="pt-2">
+<input class="w-full" max="2.0" min="0.5" step="0.1" type="range" value="1.0"/>
+</div>
+</div>
+<!-- Toggles -->
+<div class="flex flex-col gap-4 mt-2">
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="font-mono-label text-mono-label text-on-surface uppercase group-hover:text-primary-fixed-dim transition-colors">Screen Shake</span>
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-4 bg-surface-container-highest border border-outline-variant peer-focus:outline-none peer-checked:bg-primary/20 peer-checked:border-primary-fixed-dim transition-all"></div>
+<div class="absolute left-0 top-0 w-4 h-4 bg-outline peer-checked:translate-x-6 peer-checked:bg-primary-fixed-dim transition-all shadow-[0_0_5px_rgba(0,219,231,0.5)] peer-checked:shadow-[0_0_8px_rgba(0,219,231,0.8)]"></div>
+</div>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="font-mono-label text-mono-label text-on-surface uppercase group-hover:text-primary-fixed-dim transition-colors">Glow Intensity</span>
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-4 bg-surface-container-highest border border-outline-variant peer-focus:outline-none peer-checked:bg-primary/20 peer-checked:border-primary-fixed-dim transition-all"></div>
+<div class="absolute left-0 top-0 w-4 h-4 bg-outline peer-checked:translate-x-6 peer-checked:bg-primary-fixed-dim transition-all shadow-[0_0_5px_rgba(0,219,231,0.5)] peer-checked:shadow-[0_0_8px_rgba(0,219,231,0.8)]"></div>
+</div>
+</label>
+</div>
+</div>
+<!-- Right Column -->
+<div class="flex flex-col gap-6">
+<!-- Input Help -->
+<div class="bg-surface-container-high/50 border border-outline-variant/30 p-4 rounded-lg flex flex-col gap-4">
+<h3 class="font-mono-label text-mono-label text-on-surface-variant uppercase border-b border-outline-variant/30 pb-2">Input_Mapping</h3>
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface">Flip Polarity</span>
+<div class="bg-surface-container-lowest border border-outline-variant px-3 py-1 rounded text-mono-label font-mono-label text-primary-fixed-dim min-w-[80px] text-center">SPACE</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface">Navigate</span>
+<div class="flex gap-1">
+<div class="bg-surface-container-lowest border border-outline-variant px-2 py-1 rounded text-mono-label font-mono-label text-outline"><span class="material-symbols-outlined text-[16px]" data-icon="arrow_back">arrow_back</span></div>
+<div class="bg-surface-container-lowest border border-outline-variant px-2 py-1 rounded text-mono-label font-mono-label text-outline"><span class="material-symbols-outlined text-[16px]" data-icon="arrow_downward">arrow_downward</span></div>
+<div class="bg-surface-container-lowest border border-outline-variant px-2 py-1 rounded text-mono-label font-mono-label text-outline"><span class="material-symbols-outlined text-[16px]" data-icon="arrow_upward">arrow_upward</span></div>
+<div class="bg-surface-container-lowest border border-outline-variant px-2 py-1 rounded text-mono-label font-mono-label text-outline"><span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface">Halt Sim</span>
+<div class="bg-surface-container-lowest border border-outline-variant px-3 py-1 rounded text-mono-label font-mono-label text-error min-w-[40px] text-center">P</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row gap-4 mt-4 border-t border-outline-variant/30 pt-6">
+<button class="flex-1 py-3 px-6 font-headline-md text-headline-md uppercase text-primary-fixed-dim bg-transparent neon-border neon-glow transition-all duration-200">
+                    SAVE PREFERENCES
+                </button>
+<button class="flex-1 py-3 px-6 font-mono-label text-mono-label uppercase text-outline border border-outline-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200">
+                    RETURN TO GAMEPLAY
+                </button>
+</div>
+</div>
+</main>
+</body></html>

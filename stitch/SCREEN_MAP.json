@@ -1,0 +1,20 @@
+[
+  {
+    "screenId": "d0d7517c327a4bec964a83dee72cbdbd",
+    "name": "Gameplay - PrismRelay Canary",
+    "type": "game",
+    "description": "Gameplay - PrismRelay Canary screen",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  },
+  {
+    "screenId": "69621ce02aa54843b7225caeeeb0e139",
+    "name": "Game Settings - PrismRelay Canary",
+    "type": "settings",
+    "description": "Game Settings - PrismRelay Canary screen",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  }
+]

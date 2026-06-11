@@ -1,0 +1,683 @@
+{
+  "generatedAt": "2026-06-11T09:04:39.141Z",
+  "screenCount": 2,
+  "screens": {
+    "69621ce02aa54843b7225caeeeb0e139": {
+      "screenId": "69621ce02aa54843b7225caeeeb0e139",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "main",
+          "layout": "relative",
+          "classes": [
+            "relative",
+            "z-10",
+            "w-full",
+            "max-w-2xl",
+            "px-gutter"
+          ],
+          "childCount": 29
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "NOVICE",
+          "classes": [
+            "flex-1",
+            "py-2",
+            "font-mono-label",
+            "text-mono-label",
+            "text-outline",
+            "hover:bg-primary/10",
+            "hover:text-primary-fixed-dim",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "OPERATOR",
+          "classes": [
+            "flex-1",
+            "py-2",
+            "font-mono-label",
+            "text-mono-label",
+            "bg-primary-container/20",
+            "text-primary-container",
+            "border-x",
+            "border-outline-variant",
+            "glow-sm",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "MASTER",
+          "classes": [
+            "flex-1",
+            "py-2",
+            "font-mono-label",
+            "text-mono-label",
+            "text-outline",
+            "hover:bg-primary/10",
+            "hover:text-primary-fixed-dim",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "SAVE PREFERENCES",
+          "classes": [
+            "flex-1",
+            "py-3",
+            "px-6",
+            "font-headline-md",
+            "text-headline-md",
+            "uppercase",
+            "text-primary-fixed-dim",
+            "bg-transparent",
+            "neon-border",
+            "neon-glow",
+            "transition-all",
+            "duration-200"
+          ],
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "RETURN TO GAMEPLAY",
+          "classes": [
+            "flex-1",
+            "py-3",
+            "px-6",
+            "font-mono-label",
+            "text-mono-label",
+            "uppercase",
+            "text-outline",
+            "border",
+            "border-outline-variant",
+            "hover:bg-surface-container-high",
+            "hover:text-on-surface",
+            "transition-all",
+            "duration-200"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "range",
+          "label": "range",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "w-full"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "checkbox",
+          "label": "checkbox",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "sr-only",
+            "peer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "settings",
+        "arrow_back",
+        "arrow_downward",
+        "arrow_upward",
+        "arrow_forward"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "outline": "#849495",
+        "secondary-fixed": "#ffd7f0",
+        "background": "#131314",
+        "inverse-on-surface": "#313031",
+        "on-primary-fixed-variant": "#004f54",
+        "inverse-primary": "#00696f",
+        "primary-fixed-dim": "#00dbe7",
+        "on-secondary-fixed": "#3a0033",
+        "tertiary-fixed": "#ffdea8",
+        "primary-container": "#00f2ff",
+        "on-surface": "#e5e2e3",
+        "error-container": "#93000a",
+        "on-secondary": "#5e0053",
+        "secondary": "#fface8",
+        "error": "#ffb4ab",
+        "tertiary-container": "#ffd58c",
+        "on-primary-fixed": "#002022",
+        "outline-variant": "#3a494b",
+        "surface-tint": "#00dbe7",
+        "on-tertiary": "#412d00",
+        "on-background": "#e5e2e3",
+        "on-tertiary-fixed-variant": "#5e4200",
+        "secondary-container": "#ff24e4",
+        "surface-container": "#201f20",
+        "on-secondary-container": "#520049",
+        "surface": "#131314",
+        "surface-dim": "#131314",
+        "surface-container-highest": "#353436",
+        "on-primary": "#00363a",
+        "on-surface-variant": "#b9cacb",
+        "tertiary": "#fff6ed",
+        "on-error-container": "#ffdad6",
+        "on-tertiary-fixed": "#271900",
+        "surface-bright": "#3a393a",
+        "on-error": "#690005",
+        "secondary-fixed-dim": "#fface8",
+        "surface-container-high": "#2a2a2b",
+        "surface-container-low": "#1c1b1c",
+        "inverse-surface": "#e5e2e3",
+        "surface-container-lowest": "#0e0e0f",
+        "on-primary-container": "#006a71",
+        "primary-fixed": "#74f5ff",
+        "on-secondary-fixed-variant": "#840076",
+        "on-tertiary-container": "#7e5900",
+        "primary": "#e1fdff",
+        "surface-variant": "#353436",
+        "tertiary-fixed-dim": "#ffba20"
+      },
+      "fonts": [
+        "Geist",
+        "JetBrains Mono",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "gridCols": 1,
+        "flexDirection": "col",
+        "gap": "8"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "NOVICE",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "OPERATOR",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "MASTER",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "SAVE PREFERENCES",
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "RETURN TO GAMEPLAY",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "range",
+          "type": "range",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "checkbox",
+          "type": "checkbox",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [],
+      "title": "Game Settings - PrismRelay Canary"
+    },
+    "d0d7517c327a4bec964a83dee72cbdbd": {
+      "screenId": "d0d7517c327a4bec964a83dee72cbdbd",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "flex-col",
+          "classes": [
+            "hidden",
+            "md:flex",
+            "flex-col",
+            "items-center",
+            "py-panel-padding",
+            "bg-surface-container-low/60",
+            "backdrop-blur-xl",
+            "docked",
+            "left-0",
+            "h-screen"
+          ],
+          "childCount": 6
+        },
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "flex-1",
+            "md:ml-20",
+            "flex",
+            "flex-col",
+            "relative",
+            "z-10",
+            "h-screen"
+          ],
+          "childCount": 68
+        },
+        {
+          "tag": "nav",
+          "layout": "flex-row",
+          "classes": [
+            "md:hidden",
+            "fixed",
+            "bottom-0",
+            "left-0",
+            "w-full",
+            "z-50",
+            "flex",
+            "justify-around",
+            "items-center",
+            "px-4"
+          ],
+          "childCount": 0
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "scoreboard",
+          "classes": [
+            "w-8",
+            "h-8",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-outline",
+            "hover:text-primary-fixed",
+            "hover:glow-sm",
+            "transition-colors",
+            "hidden",
+            "md:flex"
+          ],
+          "icon": "scoreboard",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "dns",
+          "classes": [],
+          "icon": "dns",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "OPERATOR_01 SIGNAL_STABLE",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "power_settings_new",
+          "classes": [],
+          "icon": "power_settings_new",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        }
+      ],
+      "inputs": [],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "START",
+          "href": "#",
+          "classes": [
+            "text-[10px]",
+            "font-mono-label"
+          ],
+          "icon": "play_arrow",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "pause",
+          "href": "#",
+          "classes": [
+            "text-[10px]",
+            "font-mono-label"
+          ],
+          "icon": "pause",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "RESTART",
+          "href": "#",
+          "classes": [
+            "text-[10px]",
+            "font-mono-label"
+          ],
+          "icon": "refresh",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "LEVEL",
+          "href": "#",
+          "classes": [
+            "text-[10px]",
+            "font-mono-label"
+          ],
+          "icon": "layers",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "SCORE",
+          "href": "#",
+          "classes": [
+            "text-[10px]",
+            "font-mono-label"
+          ],
+          "icon": "analytics",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "LIVES",
+          "href": "#",
+          "classes": [
+            "text-[10px]",
+            "font-mono-label"
+          ],
+          "icon": "favorite",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "TIMER",
+          "href": "#",
+          "classes": [
+            "text-[10px]",
+            "font-mono-label"
+          ],
+          "icon": "schedule",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "dns",
+        "play_arrow",
+        "pause",
+        "refresh",
+        "power_settings_new",
+        "favorite",
+        "timer",
+        "scoreboard",
+        "trip_origin",
+        "interests",
+        "token",
+        "layers",
+        "analytics",
+        "schedule"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "outline": "#849495",
+        "secondary-fixed": "#ffd7f0",
+        "background": "#131314",
+        "inverse-on-surface": "#313031",
+        "on-primary-fixed-variant": "#004f54",
+        "inverse-primary": "#00696f",
+        "primary-fixed-dim": "#00dbe7",
+        "on-secondary-fixed": "#3a0033",
+        "tertiary-fixed": "#ffdea8",
+        "primary-container": "#00f2ff",
+        "on-surface": "#e5e2e3",
+        "error-container": "#93000a",
+        "on-secondary": "#5e0053",
+        "secondary": "#fface8",
+        "error": "#ffb4ab",
+        "tertiary-container": "#ffd58c",
+        "on-primary-fixed": "#002022",
+        "outline-variant": "#3a494b",
+        "surface-tint": "#00dbe7",
+        "on-tertiary": "#412d00",
+        "on-background": "#e5e2e3",
+        "on-tertiary-fixed-variant": "#5e4200",
+        "secondary-container": "#ff24e4",
+        "surface-container": "#201f20",
+        "on-secondary-container": "#520049",
+        "surface": "#131314",
+        "surface-dim": "#131314",
+        "surface-container-highest": "#353436",
+        "on-primary": "#00363a",
+        "on-surface-variant": "#b9cacb",
+        "tertiary": "#fff6ed",
+        "on-error-container": "#ffdad6",
+        "on-tertiary-fixed": "#271900",
+        "surface-bright": "#3a393a",
+        "on-error": "#690005",
+        "secondary-fixed-dim": "#fface8",
+        "surface-container-high": "#2a2a2b",
+        "surface-container-low": "#1c1b1c",
+        "inverse-surface": "#e5e2e3",
+        "surface-container-lowest": "#0e0e0f",
+        "on-primary-container": "#006a71",
+        "primary-fixed": "#74f5ff",
+        "on-secondary-fixed-variant": "#840076",
+        "on-tertiary-container": "#7e5900",
+        "primary": "#e1fdff",
+        "surface-variant": "#353436",
+        "tertiary-fixed-dim": "#ffba20"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Geist",
+        "JetBrains Mono"
+      ],
+      "layoutHints": {
+        "flexDirection": "col",
+        "gap": "6"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "START",
+          "icon": "play_arrow",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "pause",
+          "icon": "pause",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "RESTART",
+          "icon": "refresh",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "LEVEL",
+          "icon": "layers",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "SCORE",
+          "icon": "analytics",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "LIVES",
+          "icon": "favorite",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "TIMER",
+          "icon": "schedule",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "scoreboard",
+          "icon": "scoreboard",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "dns",
+          "icon": "dns",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "OPERATOR_01 SIGNAL_STABLE",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "power_settings_new",
+          "icon": "power_settings_new",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "dns",
+          "icon": "dns",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "OPERATOR_01 SIGNAL_STABLE",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "START",
+          "icon": "play_arrow",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "pause",
+          "icon": "pause",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "RESTART",
+          "icon": "refresh",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "power_settings_new",
+          "icon": "power_settings_new",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "LEVEL",
+          "icon": "layers",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "SCORE",
+          "icon": "analytics",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "LIVES",
+          "icon": "favorite",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "TIMER",
+          "icon": "schedule",
+          "route": "#",
+          "active": false
+        }
+      ],
+      "title": "Gameplay - PrismRelay Canary"
+    }
+  }
+}
