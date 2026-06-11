@@ -1,0 +1,214 @@
+[
+  {
+    "screenId": "d0d7517c327a4bec964a83dee72cbdbd",
+    "screenTitle": "Gameplay - PrismRelay Canary",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "START",
+        "href": "#",
+        "line": 198
+      },
+      {
+        "type": "link",
+        "label": "pause",
+        "href": "#",
+        "line": 202
+      },
+      {
+        "type": "link",
+        "label": "RESTART",
+        "href": "#",
+        "line": 206
+      },
+      {
+        "type": "link",
+        "label": "LEVEL",
+        "href": "#",
+        "line": 362
+      },
+      {
+        "type": "link",
+        "label": "SCORE",
+        "href": "#",
+        "line": 366
+      },
+      {
+        "type": "link",
+        "label": "LIVES",
+        "href": "#",
+        "line": 370
+      },
+      {
+        "type": "link",
+        "label": "TIMER",
+        "href": "#",
+        "line": 374
+      },
+      {
+        "type": "button",
+        "label": "scoreboard",
+        "line": 251
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "START",
+        "href": "#",
+        "line": 198
+      },
+      {
+        "type": "link",
+        "label": "pause",
+        "href": "#",
+        "line": 202
+      },
+      {
+        "type": "link",
+        "label": "RESTART",
+        "href": "#",
+        "line": 206
+      },
+      {
+        "type": "link",
+        "label": "LEVEL",
+        "href": "#",
+        "line": 362
+      },
+      {
+        "type": "link",
+        "label": "SCORE",
+        "href": "#",
+        "line": 366
+      },
+      {
+        "type": "link",
+        "label": "LIVES",
+        "href": "#",
+        "line": 370
+      },
+      {
+        "type": "link",
+        "label": "TIMER",
+        "href": "#",
+        "line": 374
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "scoreboard",
+        "line": 251
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 8,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "69621ce02aa54843b7225caeeeb0e139",
+    "screenTitle": "Game Settings - PrismRelay Canary",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "NOVICE",
+        "line": 159
+      },
+      {
+        "type": "button",
+        "label": "OPERATOR",
+        "line": 160
+      },
+      {
+        "type": "button",
+        "label": "MASTER",
+        "line": 161
+      },
+      {
+        "type": "button",
+        "label": "SAVE PREFERENCES",
+        "line": 221
+      },
+      {
+        "type": "button",
+        "label": "RETURN TO GAMEPLAY",
+        "line": 224
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 171
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 179
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 187
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "NOVICE",
+        "line": 159
+      },
+      {
+        "type": "button",
+        "label": "OPERATOR",
+        "line": 160
+      },
+      {
+        "type": "button",
+        "label": "MASTER",
+        "line": 161
+      },
+      {
+        "type": "button",
+        "label": "SAVE PREFERENCES",
+        "line": 221
+      },
+      {
+        "type": "button",
+        "label": "RETURN TO GAMEPLAY",
+        "line": 224
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 171
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 179
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 187
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 8,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
